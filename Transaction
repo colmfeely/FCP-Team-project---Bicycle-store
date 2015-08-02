@@ -1,0 +1,92 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Transaction {
+	
+
+	private int transactionID;
+	private int customerID;
+	private int staffID;
+	private double transactionCost;
+	private String paymentMethod;
+	private Date transactionDate;
+	
+
+	public Transaction(int transactionID, int customerID, int staffID,double transactionCost, String paymentMethod,Date transactionDate) {
+
+		this.transactionID = transactionID;
+		this.customerID = customerID;
+		this.staffID = staffID;
+		this.transactionCost=transactionCost;
+		this.paymentMethod = paymentMethod;
+		this.transactionDate=transactionDate;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
+		transactionDate = new Date();
+				
+	}
+
+	public double getTransactionCost() {
+		return transactionCost;
+	}
+
+	public void setTransactionCost(double transactionCost) {
+		this.transactionCost = transactionCost;
+	}
+
+	public Date getTransactionDate() {
+		return transactionDate;
+	}
+
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
+	public int getTransactionID() {
+		return transactionID;
+	}
+
+	public void setTransactionID(int transactionID) {
+		this.transactionID = transactionID;
+	}
+
+	public int getCustomerID() {
+		return customerID;
+	}
+
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
+	}
+
+	public int getStaffID() {
+		return staffID;
+	}
+
+	public void setStaffID(int staffID) {
+		this.staffID = staffID;
+	}
+
+	public String getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(String paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
+	
+	public Date getRentalDate() {
+		return transactionDate;
+	}
+
+	public void setRentalDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+	
+	public void display(){
+		System.out.println("Transactions ID: "+transactionID);
+		System.out.println("Customers ID: "+customerID);
+		System.out.println("Staff ID: "+staffID);
+		System.out.println("Transaction Cost: €"+ transactionCost);
+		System.out.println("Payment Method: "+paymentMethod);
+		System.out.println("Transaction Date: "+ transactionDate);
+	}
+}
