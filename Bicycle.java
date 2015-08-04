@@ -13,13 +13,15 @@ public class Bicycle {
 	private int wheelSize;
 	private String frameComposition;
 	boolean inStock = false;
+	Database database;
 	
-	public Bicycle(String colour,int frameSize,int wheelSize,String frameComposition) {
+	public Bicycle(String colour,int frameSize,int wheelSize,String frameComposition,Database database) {
 		
 		this.colour = colour;
 		this.frameSize = frameSize;
 		this.wheelSize = wheelSize;
 		this.frameComposition = frameComposition;
+		this.database = database;
 	}
 
 	public String getColour() {
@@ -61,5 +63,19 @@ public class Bicycle {
 	public void setInStock(boolean inStock) {
 		this.inStock = inStock;
 	}
+
+	public Database getDatabase() {
+		return database;
+	}
+
+	public void setDatabase(Database database) {
+		this.database = database;
+	}
+
+		public void addBicycle(){
+			
+			
+		}
+	
 
 }
