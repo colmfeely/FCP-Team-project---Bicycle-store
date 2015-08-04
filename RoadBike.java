@@ -8,7 +8,7 @@ public class RoadBike extends Bicycle  {
 
 	int numberOfGears;
 	
-	public RoadBike(int numberOfGears)  {
+	public RoadBike(int numberOfGears.String colour,int frameSize,int wheelSize,String frameComposition)  {
 
 		
 		super(colour, frameSize, wheelSize, frameComposition);
