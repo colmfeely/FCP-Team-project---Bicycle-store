@@ -1,17 +1,13 @@
-/**
- @author Colm Feely
- * BicycleTeamProject
- * RoadBike subclass of bicycle
- */
+
 
 public class RoadBike extends Bicycle  {
 
 	int numberOfGears;
 	
-	public RoadBike(int numberOfGears,String colour,int frameSize,int wheelSize,String frameComposition)  {
+	public RoadBike(int numberOfGears,String colour,int frameSize,int wheelSize,String frameComposition,Database database)  {
 
 		
-		super(colour, frameSize, wheelSize, frameComposition);
+		super(colour, frameSize, wheelSize, frameComposition, database);
 		
 		this.numberOfGears = numberOfGears;
 	}
