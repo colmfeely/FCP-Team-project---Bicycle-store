@@ -8,6 +8,7 @@
 
 public class Bicycle {
 
+	private String model;
 	private String colour;
 	private int frameSize;
 	private int wheelSize;
@@ -15,14 +16,26 @@ public class Bicycle {
 	boolean inStock = false;
 	Database database;
 	
-	public Bicycle(String colour,int frameSize,int wheelSize,String frameComposition,Database database) {
+	public Bicycle(String model,String colour,int frameSize,int wheelSize,String frameComposition,Database database) {
 		
+		this.model = model;
 		this.colour = colour;
 		this.frameSize = frameSize;
 		this.wheelSize = wheelSize;
 		this.frameComposition = frameComposition;
 		this.database = database;
 	}
+	
+
+	public String getModel() {
+		return model;
+	}
+
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
 
 	public String getColour() {
 		return colour;
