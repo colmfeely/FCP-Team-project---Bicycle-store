@@ -4,9 +4,9 @@ public class MountainBike extends Bicycle {
 	private int noOfGears;
 	private boolean hasSuspension = true;
 	
-	public MountainBike(int noOfGears,String colour,int frameSize,int wheelSize,String frameComposition) {
+	public MountainBike(int noOfGears,String colour,int frameSize,int wheelSize,String frameComposition,Database database) {
 
-		super(colour, frameSize, wheelSize, frameComposition);
+		super(colour, frameSize, wheelSize, frameComposition,database);
 		this.noOfGears = noOfGears;
 	}
 
