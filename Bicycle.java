@@ -8,10 +8,10 @@
 
 public class Bicycle {
 
-	protected static String colour;
-	protected static int frameSize;
-	protected static int wheelSize;
-	protected static String frameComposition;
+	private String colour;
+	private int frameSize;
+	private int wheelSize;
+	private String frameComposition;
 	boolean inStock = false;
 	
 	public Bicycle(String colour,int frameSize,int wheelSize,String frameComposition) {
