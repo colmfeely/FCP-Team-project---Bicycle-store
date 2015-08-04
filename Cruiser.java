@@ -3,9 +3,9 @@ public class Cruiser extends Bicycle {
 
 	private boolean hasTassles;
 	
-	public Cruiser(String colour,int frameSize,int wheelSize,String frameComposition,Database database) {
+	public Cruiser(String colour,String model,int frameSize,int wheelSize,String frameComposition,Database database) {
 		
-		super(colour, frameSize, wheelSize, frameComposition,database);
+		super(model,colour, frameSize, wheelSize, frameComposition,database);
 
 	}
 
