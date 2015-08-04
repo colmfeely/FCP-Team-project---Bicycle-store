@@ -3,25 +3,25 @@ import java.util.ArrayList;
 public class Database {
 	
 	private ArrayList<Bicycle> bicycles;
-	private ArrayList<CustomerAccount> customers;
+	private ArrayList<Customer> customers;
 	private ArrayList<Employee> employees;
 	private ArrayList<Supplier> suppliers;
 	private ArrayList<Transaction> transactions;
 
 	public Database() {
 		bicycles = new ArrayList<Bicycle>();
-		customers = new ArrayList<CustomerAccount>();
+		customers = new ArrayList<Customer>();
 		employees = new ArrayList<Employee>();
 		suppliers = new ArrayList<Supplier>();
 		transactions = new ArrayList<Transaction>();
 	}
 	
-	public boolean addCustomer(CustomerAccount customer) {
+	public boolean addCustomer(Customer customer) {
 		return customers.add(customer);
 	}
 	
-	public CustomerAccount getCustomer(int id) {
-		for(CustomerAccount customer : customers) {
+	public Customer getCustomer(int id) {
+		for(Customer customer : customers) {
 			if(customer.getId() == id)
 				return customer;
 		}
@@ -30,7 +30,7 @@ public class Database {
 		return null;
 	}
 	
-	public boolean removeCustomer(CustomerAccount customer) {
+	public boolean removeCustomer(Customer customer) {
 		return customers.remove(customer);
 	}
 	
@@ -58,12 +58,22 @@ public class Database {
 	
 	public Employee getEmployee(int id) {
 		for(Employee employee : employees) {
-			if(employee.getId() == id)
+			if(employee.getStaffID() == id)
 				return employee;
 		}
 		// if customer not found return null and output message to cmd line
 		System.out.println("Employee not found");
 		return null;
+	}
+	
+	public boolean isValidEmployee(int staffId, String password) {
+		for(Employee employee : employees) {
+			if(employee.getStaffID() == staffId) {
+				if(employee.getPassword().equals(password))
+					return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean removeEmployee(Employee employee) {
@@ -74,9 +84,9 @@ public class Database {
 		return suppliers.add(supplier);
 	}
 	
-	public Supplier getSupplier(int id) {
+	public Supplier getSupplier(String id) {
 		for(Supplier supplier : suppliers) {
-			if(supplier.getId() == id)
+			if(supplier.getSupplierID().equals(id))
 				return supplier;
 		}
 		// if customer not found return null and output message to cmd line
@@ -94,7 +104,7 @@ public class Database {
 	
 	public Transaction getTransaction(int id) {
 		for(Transaction transaction : transactions) {
-			if(transaction.getTransactionId() == id)
+			if(transaction.getTransactionID() == id)
 				return transaction;
 		}
 		// if customer not found return null and output message to cmd line
@@ -114,11 +124,11 @@ public class Database {
 		this.bicycles = bicycles;
 	}
 
-	public ArrayList<CustomerAccount> getCustomers() {
+	public ArrayList<Customer> getCustomers() {
 		return customers;
 	}
 
-	public void setCustomers(ArrayList<CustomerAccount> customers) {
+	public void setCustomers(ArrayList<Customer> customers) {
 		this.customers = customers;
 	}
 
