@@ -1,30 +1,34 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class ProfitAndLoss {
 
 	      Database data= new Database();
-		  private ArrayList<Transaction>transactions= new ArrayList<Transaction>();
+		  private ArrayList<PurchasingTransaction>purchasingTransactions= new ArrayList<PurchasingTransaction>();
+		  private ArrayList<SalesTransaction>salesTransactions= new ArrayList<SalesTransaction>();
+		  private ArrayList<Transaction> allTransactions=new ArrayList<Transaction>();
 		  private boolean profitMaking;
 		  private double totalTransactionValue;
 		
 		
 public ProfitAndLoss() {
-			
-			Collections.copy(transactions,data.getTransactions());
 			this.profitMaking = profitMaking;
 			this.totalTransactionValue = totalTransactionValue;
+			allTransactions.addAll(purchasingTransactions); // add first arraylist
+			allTransactions.addAll(salesTransactions); // add Second arraylist
 			
 			 
 			
 		}
 	
 	public ArrayList<Transaction> getTransactions() {
-		return transactions;
+		return getTransactions();
 	}
 
 
-	public void setTransactions(ArrayList<Transaction> transactions) {
-		this.transactions = transactions;
+	public void setTransactions(ArrayList<Transaction> allTransactions) {
+		this.allTransactions = allTransactions;
 	}
 
 
@@ -55,7 +59,7 @@ public ProfitAndLoss() {
 	
 	public void calculateTransactionValue(){
 		double totalValue=0;
-		for(Transaction transaction: transactions){
+		for(Transaction transaction: allTransactions){
 		totalValue=totalValue + transaction.getTransactionCost();
 		setTransactionValue(totalValue);
 		}
